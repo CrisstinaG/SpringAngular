@@ -1,0 +1,117 @@
+swagger: '2.0'
+info:
+  description: >-
+    This is a sample server Petstore server.  You can find out more about
+    Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net,
+    #swagger](http://swagger.io/irc/).  For this sample, you can use the api key
+    `special-key` to test the authorization filters.
+  version: 1.0.5
+  title: Swagger Petstore
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: localhost:8080
+basePath: /api/v1
+tags:
+  - name: heroes
+    description: Everything about your Pets
+    externalDocs:
+      description: Find out more
+      url: 'http://swagger.io'
+schemes:
+  - http
+paths:
+  /heroes:
+    post:
+      tags:
+        - heroes
+      summary: Add a new heroe to the list
+      description: ''
+      operationId: addHero
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: heroe object that needs to be added to the list
+          required: true
+          schema:
+            $ref: '#/definitions/Hero'
+      responses:
+        '201':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Hero'
+        '405':
+          description: Invalid input
+    get:
+      tags:
+        - heroes
+      summary: Find heroes
+      description: Returns hero list
+      operationId: getHero
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/HeroArray'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: heroe not found
+    delete:
+      tags:
+        - heroes
+      summary: Deletes a hero
+      description: ''
+      operationId: deleteHero
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: heroe not found
+# securityDefinitions:
+#   api_key:
+#     type: apiKey
+#     name: api_key
+#     in: header
+#   petstore_auth:
+#     type: oauth2
+#     authorizationUrl: 'https://petstore.swagger.io/oauth/authorize'
+#     flow: implicit
+#     scopes:
+#       'read:pets': read your pets
+#       'write:pets': modify pets in your account
+definitions:
+  Hero:
+    type: object
+    required:
+      - name
+    properties:
+      id:
+        type: integer
+        format: int64
+      name:
+        type: string
+        example: Superman
+      description:
+        type: string
+        example: Superman
+  HeroArray:
+      type: array
+      items:
+        $ref: '#/definitions/Hero'
+externalDocs:
+  description: Find out more about Swagger
+  url: 'http://swagger.io'
