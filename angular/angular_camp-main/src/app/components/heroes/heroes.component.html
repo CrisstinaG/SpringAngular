@@ -1,0 +1,4 @@
+<div class="container">
+    <app-hero-form (addHeroSignal)="addHero($event)"></app-hero-form>
+    <app-heroes-list [heroesList]="heroes" (removeHeroSignal)="removeHero($event)"></app-heroes-list>
+</div>

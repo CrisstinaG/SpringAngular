@@ -1,0 +1,39 @@
+<div class="container">
+    <h3 class="display-5">orden</h3>
+    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model.order">
+        <label ngbButtonLabel class="btn-primary">
+            <input ngbButton (change)="handleClick()" type="radio" [value]="0"> Alfabético
+        </label>
+        <label ngbButtonLabel class="btn-primary">
+            <input ngbButton (change)="handleClick()" type="radio" [value]="1"> Población
+        </label>
+        <label ngbButtonLabel class="btn-primary">
+            <input ngbButton (change)="handleClick()" type="radio" [value]="2"> Área
+        </label>
+    </div>
+    <h3 class="display-5">sentido</h3>
+    <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model.ascendent">
+        <label ngbButtonLabel class="btn-primary">
+            <input ngbButton (change)="handleClick()" type="radio" [value]="true"> Ascendente
+        </label>
+        <label ngbButtonLabel class="btn-primary">
+            <input ngbButton (change)="handleClick()" type="radio" [value]="false"> Descendente
+        </label>
+    </div>
+
+    <hr>
+    <pre>{{model | json}}</pre>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let country of countries | sort: model">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">{{country.name}}</h4>
+                    <h5 class="display-5">{{country.capital}}</h5>
+                    <p class="card-text">{{country.population}}</p>
+                    <p class="card-text">{{country.area}} km2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

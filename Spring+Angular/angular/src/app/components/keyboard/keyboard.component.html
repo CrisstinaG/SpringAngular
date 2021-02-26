@@ -1,0 +1,31 @@
+<div class="container">
+    <div style="display: flex;flex-direction: row;">
+        <div style="display: flex;flex-direction: column;">
+            <div style="display: flex;flex-direction: row;">
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick(1)">1</button>
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick(2)">2</button>
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick(3)">3</button>
+            </div>
+            <div style="display: flex;flex-direction: row;">
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick(4)">4</button>
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick(5)">5</button>
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick(6)">6</button>
+            </div>
+            <div style="display: flex;flex-direction: row;">
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick(7)">7</button>
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick(8)">8</button>
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick(9)">9</button>
+            </div>
+            <div style="display: flex;flex-direction: row;">
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick(0)">0</button>
+                <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick('=')">=</button>
+            </div>
+        </div>
+        <div style="display: flex;flex-direction: column;">
+            <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick('+')">+</button>
+            <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick('-')">-</button>
+            <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick('*')">*</button>
+            <button type="button" class="btn btn-outline-primary m-1" (click)="handleClick('/')">/</button>
+        </div>
+    </div>
+</div>

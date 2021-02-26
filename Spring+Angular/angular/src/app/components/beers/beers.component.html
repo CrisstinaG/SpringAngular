@@ -1,0 +1,21 @@
+<div class="container">
+    <ngx-slider [(value)]="value" [(highValue)]="highValue" [options]="options" (userChange)="handleChange(value, highValue)"></ngx-slider>
+
+    <div class="row mt-3">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let beer of beers">
+            <div class="card p-2 mb-4" ngsw>
+                <div class="container text-center">
+                    <img class="card-img-top" [src]="beer.image_url" alt="" style="width: 60px">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">{{beer.name }}</h4>
+                    <p class="card-text">{{beer.tagline}}</p>
+                    <p class="card-text">{{beer.abv | abv: 'º'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<p>{{result | json}}</p>

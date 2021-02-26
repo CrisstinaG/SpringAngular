@@ -1,0 +1,8 @@
+<div class="card">
+    <img class="card-img-top" src="holder.js/100x180/" alt="">
+    <div class="card-body">
+        <h4 class="card-title" [innerHTML]="card.question"></h4>
+        <button type="button" [class]="getClass(answer)"
+         *ngFor="let answer of card.answers" [innerHTML]="answer" (click)="handleClick(answer)"></button>
+    </div>
+</div>

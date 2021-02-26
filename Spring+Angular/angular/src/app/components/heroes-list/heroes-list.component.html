@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let hero of heroesList; let i = index">
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4 class="card-title">{{hero.name}}</h4>
+                <p class="card-text">{{hero.description}}</p>
+                <button type="button" class="btn btn-danger" (click)="deleteHero(hero.id)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

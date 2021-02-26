@@ -1,0 +1,6 @@
+<div class="container text-center mt-3">
+    <app-apod-date-picker (dateSignal)="myDate = $event"></app-apod-date-picker>
+</div>
+<div class="container">
+    <app-apod-show [date]="myDate"></app-apod-show>
+</div>

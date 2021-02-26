@@ -1,0 +1,22 @@
+import { Component, OnInit } from '@angular/core';
+import { ApodService } from 'src/app/services/apod.service';
+
+@Component({
+  selector: 'app-apod',
+  templateUrl: './apod.component.html',
+  styleUrls: ['./apod.component.scss']
+})
+export class ApodComponent implements OnInit {
+
+  myDate = '';
+
+  constructor() { }
+
+  ngOnInit(): void {
+    //     this.route.queryParams.subscribe(params => {
+    //     this.myDate = params['date'];
+    // });
+
+  }
+
+}
